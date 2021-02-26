@@ -5,6 +5,7 @@ go 1.13
 require (
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/go-redis/redis v6.15.9+incompatible
+	github.com/gookit/goutil v0.3.8 // indirect
 	github.com/gookit/validate v1.2.8
 	github.com/kataras/iris/v12 v12.1.8
 	github.com/natefinch/lumberjack v2.0.0+incompatible

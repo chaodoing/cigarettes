@@ -6,7 +6,6 @@ import (
 
 	"github.com/urfave/cli"
 
-	`github.com/chaodoing/cigarettes/http`
 	"github.com/chaodoing/cigarettes/providers/container"
 	"github.com/chaodoing/cigarettes/providers/service"
 )
@@ -22,6 +21,7 @@ var Servcie = cli.Command{
 		StringFlag("config, c", os.Getenv("PWD")+"/conf/app.ini", "自定义配置文件路径"),
 	},
 }
+
 // runService
 func runService(c *cli.Context) {
 	config := c.String("config")
@@ -31,6 +31,5 @@ func runService(c *cli.Context) {
 		environment.App.Port = port
 	}
 	var containers = container.XContainer(environment)
-	containers = containers.SetAcl(http.Acl(containers.Database()))
 	service.AppService(containers)
 }
